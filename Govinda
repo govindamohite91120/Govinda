@@ -1,0 +1,15 @@
+System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.facebook.com/signup");
+		String expectedvalue="#1c1e21";
+		String ActualValue = driver.findElement(By.xpath("//div[text()='Create a new account']")).getCssValue("color");
+		String element = Color.fromString(ActualValue).asHex();
+		System.out.println(element);
+		if(element.equals(expectedvalue))
+		{
+			System.out.println("PASS : CSSHEXA Value Is Same ");
+		}
+		else
+		{
+			System.out.println("FAIL : CSSHEXA Value Is Same ");
+		}
